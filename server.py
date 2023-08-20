@@ -23,7 +23,7 @@ def PEValueEstimate(ticker='AAPL', expected_return=0.05, exit_pe=15.0):
         "EPS": [round(eps, 2)],
         "PE Ratio": [round(pe_ratio, 2)],
         "Expected 10 YR CAGR Return%": [float(expected_return) * 100],
-        "Dividend Yield": [dividend_yield],
+        "Dividend Yield": [dividend_yield ],
         "10 Yr Forward Stock Price": [round(ten_yr_stock_price, 0)],
         "Exit P/E": [exit_pe],
         "10 Yr Forward EPS": [round(ten_yr_eps, 2)],
@@ -57,6 +57,7 @@ def receive_data():
     user_expected_return = float(request.form['user_expected_return'])/100  #convert % to float
     print(user_expected_return)
     user_exit_pe = float(request.form['user_exit_pe'])
+
 
     try:
         return estimate(user_ticker, user_expected_return, user_exit_pe)
