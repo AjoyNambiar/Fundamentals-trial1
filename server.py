@@ -52,11 +52,11 @@ def estimate(ticker, expected_return, exit_pe):
 @app.route('/estimator_page', methods=['GET', 'POST'])
 def receive_data():
     print("start receive")
+    user_ticker = request.form['user_ticker']
+    print(user_ticker)
     user_expected_return = float(request.form['user_expected_return'])/100  #convert % to float
     print(user_expected_return)
     user_exit_pe = float(request.form['user_exit_pe'])
-    user_ticker = request.form['user_ticker']
-    print(user_ticker)
 
     try:
         return estimate(user_ticker, user_expected_return, user_exit_pe)
